@@ -1,0 +1,536 @@
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="Plearn education for newbie investors">
+	<meta name="author" content="Plearn.io">
+	
+	<title>Plearn.io</title>
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Padauk|Mitr|Open+Sans:300|Source+Sans+Pro:300" rel="stylesheet">
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="../css/graph.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .w3-sidenav a {padding:16px;font-family: 'Mitr', sans-serif;}
+        #myBtn { font-size: 130%;font-family: 'Mitr', sans-serif;}
+        .menu-focus { 
+            background-color: #bbb;
+        }
+        .w3-button{
+           font-family: 'Mitr', sans-serif; 
+        }
+
+        /* Create a Parallax Effect */
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* First image (Logo. Full height) */
+        .bgimg-1 {
+            background-image: url('../images/plearn/background/BG.jpg');
+            min-height: 100%;
+        }
+
+        .w3-wide {letter-spacing: 10px;}
+        .w3-hover-opacity {cursor: pointer;}
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+        body{
+            padding-top:0px;
+        }
+        .profile-info td{
+            font-family: 'Mitr', sans-serif; 
+            font-style: bold;
+            font-size: 120%;
+		    line-height: 1.5;
+            padding: 5px;
+        }
+
+
+        hr.style-eight {
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        hr.style-eight:after {
+            display: inline-block;
+            position: relative;
+            top: -0.7em;
+            font-size: 1.5em;
+            padding: 0 0.25em;
+            background: white;
+        }
+
+        nav {
+            font-family: 'Mitr', sans-serif; 
+        }
+
+        p b {
+            color:black;
+        }
+
+        .div-button:hover{
+            background-color:#eee;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1" id="home" style="padding-top:150px;padding-bottom: 100px;">
+<div class="container w3-animate-opacity" style="white-space:nowrap;background-color:rgba(255,255,255,1);padding: 30px;padding-top:0px;">
+    <div style="overflow-x:hidden">
+    <div class="col-md-12 w3-opacity-min" style="margin-bottom:30px;padding-top:20px">
+        <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide myFont">สวัสดี <span class="w3-hide-small"> พารึก </span> !</span>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-5 w3-opacity-min">
+            <center style="width:300px;overflow:hidden;margin:auto auto;margin-top:30px">
+            <img src="../images/plearn/profile.jpg" style="height: 300px;">
+            </center>
+        </div>
+        <div class="col-md-7">
+            <h3> ข้อมูลส่วนตัว </h3>
+            <hr class="style-eight">
+            <table style="width: 100%" class="profile-info">
+                <col width="30%"><col width="70%">
+                <tr><td><b>ID</b></td><td class="sub">p.plearn</td></tr>
+                <tr><td><b>ระดับ</b></td><td class="sub">เริ่มลงทุน</td></tr>
+                <!--<tr><td><b>เขียนเนื้อหา</b></td><td class="sub"> 16 บท <button class="btn btn-default" style="margin-left:20px;opacity:1"><i class="fa fa-book"></i></button></td></tr>-->
+                <tr><td><b>เนื้อหาหลัก</b></td><td><div class="w3-light-grey">
+                    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%;font-size: 50%">72.6 %</div>
+                </div></td></tr>
+            </table>
+            <div class="col-md-12" style="text-align:center;padding: 20px;border:1px solid #ddd;margin-top:20px">
+                <div class="col-md-4">
+                    <h5>ผู้ติดตาม</h5>
+                    <h4>75</h4>
+                </div>
+                <div class="col-md-4">
+                    <h5>กำลังติดตาม</h5>
+                    <h4>3</h4>
+                </div>
+                <div class="col-md-4">
+                    <h5>เนื้อหาที่สร้าง</h5>
+                    <h4>16</h4>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    <div class="col-md-12 " style="margin-top:40px;padding: 0px">
+        <center style="margin-bottom:20px"><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#clusterDiv" aria-expanded="false"><h6>กดเพื่อดูรูปแบบการลงทุน</h6></button></center>
+        <div class="col-md-12 collapse w3-opacity-min" id="clusterDiv" style="border:1px solid #ddd;padding: 0px;">
+            <div class="col-md-8" style="padding:0px;height:520">
+                <center style="width:100%;"><div id='clusterChart'></center>
+            </div>
+            <div class="col-md-4" style="padding:20px;overflow-y:auto;height:520;display: block;white-space: normal;word-wrap: break-word;">
+                <center style="width:100%;padding: 20px"><h5>Analysis by Neural's System</h5></center>
+                <p><b>#1</b> : Analysis from 175 data <br><b>#2</b> : Data quality : <b>C (normal)</b> , please learning in Plearn Zone to 90-100% for increase quality
+                </p>
+                <center style="width:100%;padding: 20px"><h5>Meaning</h5></center>
+                <p><b>VI</b> : Value Investment's style <br><b>Clustering</b> : Property for invest in specific or a little bit of stocks. <br><b>Human</b> : Use human thinking to buy or sell.<br>
+                <b>Technical</b>  : Technical Investment's style (Use graphs tactical and indicators)
+                <br><b>Distribution</b> : Property for invest in various stocks and make distribute portfolio.<br><b>Robot</b> : Trust in statistic , suit with robot trading and back-testing 
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container w3-opacity-min" style="background-color: rgba(20,20,20,0.7);padding:0px;padding-bottom: 15px;padding-top:15px">
+<center><h2 style="color:white"> เครื่องมือสำหรับการเรียนรู้ </h2></center>
+</div>
+<div class="container" style="background-color: rgba(255,255,255,1)">
+    <center>
+        <center>
+            <a href="plearn.html">
+            <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
+                <img src="../images/plearn/menu_1.jpg" width="240" style="border-radius: 10px">
+                <div><button class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> Plearn Zone <span class="sub"><br> แหล่งเรียนรู้เนื้อหา</span></button></div>
+            </div>
+            </a>
+            <a href="#_main">
+            <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
+                <img src="../images/plearn/menu_2.jpg" width="240"  style="border-radius: 10px">
+                <div><button  class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> Neural Tools <span class="sub"><br> เครื่องมือเรียนรู้การลงทุน</span></button></div>
+            </div>
+            </a>
+            <a href="plearn_sim.html">
+            <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
+                <img src="../images/plearn/menu_3.jpg" width="240"  style="border-radius: 10px">
+                <div><button  class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> Neural Simulation<span class="sub"><br> เรียนรู้จากการจำลองการลงทุน</span></button></div>
+            </div>
+            </a>
+        </center>
+    </center>
+</div>
+</div>
+
+<div style="width:100%;padding: 30px" id="_main">
+    <center><h1>NEURAL TOOLS</h1>
+    <h2 style="color:#aaa">เครื่องมือเรียนรูู้้เฉพาะตัวของนักลงทุน</h2>
+    </center>
+</div>
+
+<div class="container" ng-controller="appCtrl" ng-init="chooseCh(1,1)" style="border : 1px solid #ddd;padding-bottom:20px;overflow-y: auto;margin-bottom:300px">
+    <div class="col-md-12" style="padding:20px">
+        <h3> กราฟงบการเงิน </h3>
+        <div class="col-md-12" style="padding: 20px;">
+            <div class="col-md-6" style="height:420px;border: 1px solid #ddd">
+                <div id="chartCustom1" style="width:100%;height:100%">
+                </div>
+            </div>
+            <div class="col-md-6" style="height:420px;border: 1px solid #ddd">
+                <div id="chartCustom2" style="width:100%;height:100%">
+                </div>
+            </div>
+            <div class="col-md-6" style="height:420px;border: 1px solid #ddd">
+                <div id="chartCustom3" style="width:100%;height:100%">
+                </div>
+            </div>
+            <div class="col-md-6" style="height:420px;border: 1px solid #ddd;background-color:#eee">
+                <center><a href="#_custom" ><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#customChart" aria-expanded="false" style="margin-top:175px">
+                    <h6>เพิ่มกราฟที่กำหนดเอง</h6></button></a>
+                </center>
+            </div>
+        </div>
+        <div id="_custom" class="col-md-12"></div>
+        <div class="content-wrapper collapse" id="customChart">
+        <div class="col-md-12" style="padding-top:20px;padding-bottom:20px">
+        	<div>
+                <button class="btn btn-default btn-moreContent" type="button" data-toggle="collapse" data-target="#moreHowto" aria-expanded="false"><b>วิธีใช้</b></button>
+                <div class="collapse" id="moreHowto"><div class="well" style="background-color:white;margin:0px">
+                    <p><br>1.เลือกด้านที่ต้องการให้ข้อมูลแสดง<br>2.เลือกชนิดของกราฟ<br>2.เลือกข้อมูล</p>
+	        	<p style="color:#505050;">หมายเหตุ : สามารถแสดงกราฟแต่ละชื่อพร้อมกันได้ </p></div></div>
+	        </div>
+	        <div id="content-body">
+		        <div class="col-md-8" style="border:1px solid #ddd">
+					<div id="myChart" style="width: 100%;"></div>
+		        </div>
+		        <div class="col-md-4" style="padding-top:0px;">
+		        	<!--<div>
+			           	Right/Left<input type="checkbox" id="changeRight" onclick="checkStatus()" />&nbsp;&nbsp;
+			           	Line/Bar<input type="checkbox" id="LineBar" onclick="checkType()" />
+		           	</div>-->
+		           	<div class="center">
+						<div class="btn-group" id="status" data-toggle="buttons">
+				              <label class="btn btn-default btn-on active" onclick="checkStatus()">
+				              <input type="radio" checked="checked" name="rightLeft" value="1">Left</label>
+
+				              <label class="btn btn-default btn-off" onclick="checkStatus()">
+				              <input type="radio" name="rightLeft" value="0" >Right</label>
+				        </div>
+				        <div class="btn-group" id="status" data-toggle="buttons">
+				              <label class="btn btn-default btn-on active" onclick="checkType()">
+				              <input type="radio" value="1" checked="checked" name="lineBar">Line</label>
+				              <label class="btn btn-default btn-off" onclick="checkType()">
+				              <input type="radio" value="0" name="lineBar">Bar</label>
+				        </div>
+			        </div>
+
+		           	<div style="padding-top: 30px;">
+		            	<div class="col-md-12">
+			            	<div class="checkbox">
+				            	<label><input type="checkbox" id="High"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  High
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Low"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Low
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Close"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Close
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Volume"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Volume
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="RTA"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  RTA
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="RTE"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  RTE
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="PE"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  PE
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="PBV"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  PBV
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Marketcap"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Marketcap
+					            </label>
+			        		</div>
+			            	<div class="checkbox">
+				            	<label><input type="checkbox" id="DivYield"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Dividend Yield
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Cash"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Cash
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="TotalAss"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Total Assets
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Sale"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Sales
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="Revenue"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Revenue
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="NetProfit"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Net Profit
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="GrossProfitmar"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Gross Profit Margin
+					            </label>
+			        		</div>
+			        		<div class="checkbox">
+				            	<label><input type="checkbox" id="NetProfitmar"/>
+					                <span class="cr green">
+					                	<i class="cr-icon fa fa-check"></i>
+					                </span>  Net Profit Margin
+					            </label>
+			        		</div>
+			        	</div>
+			        </div>
+	        </div>
+            </div>
+        </div>
+        </div>      
+    </div>
+    <div class="col-md-12" style="padding:20px">
+        <h3> กราฟเทคนิค </h3>
+        <div class="col-md-12" style="padding: 20px;">
+            <div class="col-md-12" style="height:420px;border: 1px solid #ddd">
+                <div id="tiChart_1" style="width:100%;height:100%">
+                </div>
+            </div>
+            <div class="col-md-12" style="height:420px;border: 1px solid #ddd;background-color:#eee">
+                <center><a href="#_custom2" ><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#customChartTi" aria-expanded="false" style="margin-top:175px">
+                    <h6>เพิ่มกราฟที่กำหนดเอง</h6></button></a>
+                </center>
+            </div>
+        </div>
+        <div id="_custom2" class="col-md-12"></div>   
+        <div class="collapse" id="customChartTi" >
+            <div  class="col-md-12" style="padding:60px;border:1px solid #ddd">
+            <center><h3 style="color:#888"> กำลังอยู่ในช่วงพัฒนา </h3></center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+$(document).ready(function(){
+
+			$('a[href^="#_"]').on('click', function(event) {
+
+			    var target = $(this.getAttribute('href'));
+
+			    if( target.length ) {
+			        event.preventDefault();
+			        $('html, body').stop().animate({
+			            scrollTop: target.offset().top
+			        }, 500);
+			    }
+
+			});
+	    });
+</script>
+<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+<script> 
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];
+</script>
+<script>
+var openTab = document.getElementById("firstTab");
+zingchart.THEME="classic";
+var ctconfig = 
+        {
+            "type": "radar",
+            "border": "none",
+            "tooltip": {
+                "text": "%t<br>%k Is %v",
+                "shadow": 0,
+                "border-radius": 3,
+                "background-color": "black",
+            },
+            "plot": {
+                "aspect": "area",
+                "active-area":true
+            },
+            "plotarea":{   
+                "background-color" : "#eee",
+                "margin":"0 0 0 0"  
+            },
+            "scale-k": {
+                "values": [
+                    "VI",
+                    "Clustering",
+                    "Robot",
+                    "Technical",
+                    "Distribution",
+                    "Human",
+                ],
+                "item": {
+                    "font-size": "12px",
+                    "padding":"10px",
+                    "color":"black",
+                },
+                "guide": {
+                    "line-color": "#ddd",
+                    "line-style": "solid",
+                    "line-width": "2px",
+                    "items": [
+                        {
+                            "background-color": "#111"
+                        }
+                    ]
+                },
+                "tick": {
+                    "visible": false
+                }
+            },
+            "scale-v": {
+                "values": "0:5:1",
+                "labels": ["", "", "", "", "","" ],
+                "ref-line": {
+                    "line-width": "1px",
+                    "line-color": "#818181"
+                },
+                "guide": {
+                    "line-width": ".5px",
+                    "line-color": "#eee",
+                    "line-style": "dashed"
+                },
+                "tick": {
+                    "size": 10,
+                    "line-width": ".5px",
+                    "line-length": 0.55,
+                    "line-color": "#818181"
+                },
+                "item": {
+                    "padding-left": "9.5px",
+                    "font-size": "8px",
+                    "color": "white"
+                }
+            },
+            "series": [
+                {
+                    "values": [
+                        3.8,
+                        1.2,
+                        4.6,
+                        2.5,
+                        4.7,
+                        1.2,
+
+                    ],
+                    "text": "Stratgy",
+                    "background-color": "#ddd",
+                    "line-color": "#fff",
+                    "line-width": "4px",
+                    "alpha": "0.35",
+                    "marker": {
+                        "background-color": "#999999",
+                        "size": "4",
+                        "border-color": "#999999",
+                        "alpha": "0.55"
+                    }
+                
+                }
+            ]
+        };
+
+zingchart.render({ 
+	id : 'clusterChart', 
+	data : ctconfig, 
+	width: '100%',
+});
+</script>
+<script type="text/javascript" src="../js/HMPRO.js"></script>
+<script src="../js/HMPRO_2012-2014.js"></script>
+<script src="../js/data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+<script src="../controllers/controller-plearn.js"></script>
+</html>
