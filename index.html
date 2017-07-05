@@ -1,8 +1,160 @@
-Hello !
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Plearn education for newbie investors">
+    <meta name="author" content="Plearn.io">
+    
+    <title>Plearn.io</title>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-pruek !!
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main_piak.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/discover.ico" type="image/x-icon">
+</head>
 
-ddddd
+<body >
+    <div class="main">
+    <nav class="navbar navbar-inverse no-margin">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Neural</a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Log in</a></li>
+            <li>
+              <a class="btn btn-default btn-outline btn-circle collapsed" href="#">Sign up</a>
+            </li>
+          </ul>
+          <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" />
+              </div>
+              <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header>
+        <div class="wrap">
+            <img src="images/browser.png" height="432" width="600" class="header-img">
+            <div class="header-wrapper">
+                <h2>ลงทุนเป็นภายใน 1 วัน</h2>
+                <h1><span class="h2 white">กับ </span>Neural</h1>
+                <div class="hidden-md hidden-lg col-md-12 center">
+                     <img src="images/browser.png" style="width:100%;">
+                </div>
+                <h6 class="hidden-sm hidden-xs">สอนการลงทุนครบรูปแบบ สำหรับผู้เริ่มต้น</h6>
+                <div class="buttons-wrapper center">
+                    <a href="views/plearn.html" ><button class="button button-white button-shadow-green">DEMO</button></a>
+                    <div class="black" style="padding-top: 20px;"><!--<a class="MNPaethai" href="#">เข้าสู่ระบบ</a>-->เร็วๆนี้</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-asasfas
+    <div id="intro">
+        <div class="container">
+            <div class="hidden-sm hidden-xs col-md-12 center">
+                <h1>Neural</h1>
+                <h3>"แพลตฟอร์มเพื่อการเรียนรู้ด้านการลงทุน <span class="h1">แบบครบวงจร</span>"</h3>
+            </div>
+            <div class="hidden-md hidden-lg col-md-12 center">
+                <h3>แพลตฟอร์มเพื่อการเรียนรู้ด้านการลงทุน </h3>
+                <h1>แบบครบวงจร</h1>
+            </div>
+            <div id ="intro-image" class="col-md-12">
+                <div class="col-md-4 center">
+                    <img src="images/lace.png">
+                    <p class="text-head">เรียนรู้ได้เร็ว</p>
+                    <hr>
+                    <p class="text-body">สามารถเข้าใจการลงทุนเบื้องต้นได้ไม่เกิน 1 ชั่วโมง</p>
+                </div>
+                 <div class="col-md-4 center">
+                    <img src="images/notebook.png">
+                    <p class="text-head">Step by Step</p>
+                    <hr>
+                    <p class="text-body">บทเรียนเป็นขั้นตอน เข้าใจง่าย</p>
+                </div>
+                <div class="col-md-4 center">
+                    <img src="images/coins.png">
+                    <p class="text-head">ฟรี</p>
+                    <hr>
+                    <p class="text-body">ไม่เสียค่าใช้จ่ายในการเรียนรู้</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div id="section-one" class="section">
+        <div class="container">
+            <div class="col-md-7 center">
+                <img src="images/window1.png">
+            </div>
+            <div class="col-md-5">
+                <h3 class="white">เรียนรู้และสร้างเนื้อหาของคุณเอง</h3>
+                <hr>
+                <p class="text-body white">รวบรวมเนื้อหาความรู้่แบบจัดเต็มในการลงทุนครบทุกรูปแบบ เน้นสั้น กระชับ อ่านง่าย เข้าใจทันที พร้อมมินิเกมช่วยเสริมความเข้าใจ และทำให้การเรียนสนุกสนานมากยิ่งขึ้น รวมถึงสังคมแห่งการแบ่งปันความรู้</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="section-two" class="section">
+        <div class="container">
+            <div class="hidden-lg hidden-md col-md-6 center">
+                <img src="images/chart.png" style="width:70%;">
+            </div>
+            <div class="col-md-6">
+                <h3>เรียนรู้กลยุทธ์และรูปแบบการลงทุน</h3>
+                <hr>
+                <p class="text-body">นำเสนอกลยุทธ์และรูปแบบการลงทุนมากมายที่เหมาะกับคุณโดยเฉพาะ ด้วยเครื่องมือสำเร็จรูปที่เข้าใจง่าย มีความหลากหลายและเหมาะทั้งระดับมือใหม่จนถึงระดับชำนาญ เพื่อการลงทุนอย่างยั่งยืนในรูปแบบของคุณเอง</p>
+            </div>
+            <div class="hidden-sm hidden-xs col-md-6 center">
+                <img src="images/chart.png" style="width:80%;">
+            </div>
+        </div>
+    </div>
+  
+    <div id="section-three" class="section">
+        <div class="container">
+            <div class="col-md-6 center">
+                <img src="images/simu.png" style="width:100%;">
+            </div>
+            <div class="col-md-6">
+                <h3 class="white">จำลองการลงทุนเสริมสร้างประสบการณ์</h3>
+                <hr>
+                <p class="text-body white">สามารถจำลองการลงทุนในรูปแบบของคุณเองได้ทันที ไม่ต้องรอผลนานให้เสียเวลา ด้วยเครื่องมือของ Nueral จะช่วยเสริมสร้างความมั่นใจและประสบการณ์ในการลงทุนของคุณ</p>
+            </div>
+        </div>
+
+        <div class="buttons-wrapper center" style="padding:70px 0px 0px 0px;">
+            <a href="views/plearn.html" ><button class="button button-white button-shadow-drakgreen">DEMO</button></a>
+        </div>
+
+    </div>
+<div class="footer-black">
+    <h6>P.PLEARN.io@gmail.com</h6>
+    Copyright © 2017 NEURAL
+</div>
+
+    
+  
+
+</body>
+</html>
