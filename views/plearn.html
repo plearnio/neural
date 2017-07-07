@@ -16,6 +16,8 @@
     <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../css/w3.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main_piak.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .w3-sidenav a {padding:16px;font-family: 'Mitr', sans-serif;}
         #myBtn { font-size: 130%;font-family: 'Mitr', sans-serif;}
@@ -36,7 +38,7 @@
 
         /* First image (Logo. Full height) */
         .bgimg-1 {
-            background-image: url('../images/plearn/background/BG.jpg');
+            background-color: #F8F9FC;
             min-height: 100%;
         }
 
@@ -87,12 +89,83 @@
 
         .div-button:hover{
             background-color:#eee;
+
+        .navbar-container {
+	    padding: 20px 20px 20px 20px;
+	}
+
+	.navbar.navbar-fixed-top.fixed-theme {
+	    background-color: rgba(2,2,2,.8);
+	    border-color: #080808;
+	    box-shadow: 0 0 5px rgba(0,0,0,.8);
+	}
+
+	.navbar.navbar-fixed-top.fixed-theme a,
+	.navbar.navbar-fixed-top.fixed-theme i {
+	    color : white;
+	}
+
+	.navbar.navbar-fixed-top.fixed-theme a:hover {
+	    background-color: black;
+	}
+
+	.navbar.navbar-fixed-top.fixed-theme a:focus {
+	    background-color: #111;
+	}
+
+	.navbar-brand.fixed-theme {
+	    font-size: 18px;
+	}
+
+	.navbar-container.fixed-theme {
+	    padding-top: 0;
+	    padding-bottom: 0;
+	}
+
+	.navbar-brand.fixed-theme,
+	.navbar-container.fixed-theme,
+	.navbar.navbar-fixed-top.fixed-theme,
+	.navbar-brand,
+	.navbar-container{
+	    transition: 0.8s;
+	    -webkit-transition:  0.8s;
+	}
         }
     </style>
 </head>
 
 <body>
-
+<div class="main">
+    <nav class="navbar navbar-inverse no-margin">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Neural</a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Log in</a></li>
+            <li>
+              <a class="btn btn-default btn-outline btn-circle collapsed" href="#">Sign up</a>
+            </li>
+          </ul>
+          <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" />
+              </div>
+              <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1" id="_home" style="padding-top:150px;padding-bottom: 100px">
@@ -108,36 +181,36 @@
             </center>
         </div>
         <div class="col-md-7">
-            <h3> ข้อมูลผู้เล่น </h3>
+            <h3> ข้อมูลส่วนตัว </h3>
             <hr class="style-eight">
             <table style="width: 100%" class="profile-info">
                 <col width="30%"><col width="70%">
                 <tr><td><b>ID</b></td><td class="sub">p.plearn</td></tr>
-                <tr><td><b>เลเวล</b></td><td class="sub">5</td></tr>
+                <tr><td><b>เลเวล</b></td><td class="sub">เริ่มลงทุน</td></tr>
                 <!--<tr><td><b>เขียนเนื้อหา</b></td><td class="sub"> 16 บท <button class="btn btn-default" style="margin-left:20px;opacity:1"><i class="fa fa-book"></i></button></td></tr>-->
-                <tr><td><b>ประสบการณ์</b></td><td><div class="w3-light-grey">
-                    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%;font-size: 50%">72.6 %</div>
+                <tr><td><b>เนื้อหาหลัก</b></td><td><div class="w3-light-grey">
+                    <div class="w3-container w3-padding-small w3-center" style="width:75%;height: 20px;background-color: #65CDB1!important"></div>
                 </div></td></tr>
             </table>
             <div class="col-md-12" style="text-align:center;padding: 20px;border:1px solid #ddd;margin-top:20px">
                 <div class="col-md-4">
-                    <h5>ไอเท็มที่พบ</h5>
-                    <h4>75</h4>
+                    <h6>ผู้ติดตาม</h6>
+                    <h6 style="font-weight:normal">75</h6>
                 </div>
                 <div class="col-md-4">
-                    <h5>สร้างไอเท็ม</h5>
-                    <h4>3</h4>
+                    <h6>กำลังติดตาม</h6>
+                    <h6 style="font-weight:normal">3</h6>
                 </div>
                 <div class="col-md-4">
-                    <h5>โลกที่สร้าง</h5>
-                    <h4>16</h4>
+                    <h6>เนื้อหาที่สร้าง</h6>
+                    <h6 style="font-weight:normal">16</h6>
                 </div>
             </div>
                 
         </div>
     </div>
     <div class="col-md-12" style="margin-top:40px;padding: 0px">
-        <center style="margin-bottom:20px"><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#clusterDiv" aria-expanded="false"><h6>กดเพื่อดูรูปแบบการเล่น</h6></button></center>
+        <center style="margin-bottom:20px"><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#clusterDiv" aria-expanded="false"><h6>กดเพื่อดูรูปแบบการลงทุน</h6></button></center>
         <div class="col-md-12 collapse w3-opacity-min" id="clusterDiv" style="border:1px solid #ddd;padding: 0px;">
             <div class="col-md-8" style="padding:0px;height:520">
                 <center style="width:100%;"><div id='clusterChart'></center>
@@ -149,43 +222,35 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="margin-top:40px;padding: 0px">
-        <center style="margin-bottom:20px"><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#clusterDiv" aria-expanded="false"><h6>โลกของ p.plearn</h6></button></center>
-        <div class="col-md-12 collapse w3-opacity-min" id="clusterDiv" style="border:1px solid #ddd;padding: 0px;">
-            <div class="col-md-8" style="padding:0px;height:520">
-                <center style="width:100%;"><div id='clusterChart'></center>
-            </div>
-            <div class="col-md-4" style="padding:20px;overflow-y:auto;height:520;display: block;white-space: normal;word-wrap: break-word;">
-                <center style="width:100%;padding: 20px"><h5>Analysis by Neural's System</h5></center>
-                <p><b>#1</b> : Analysis from 175 data <br><b>#2</b> : Data quality : <b>C (normal)</b> , please learning in Plearn Zone to 90-100% for increase quality
-                </p>
-            </div>
-        </div>
-    </div>
+    
     </div>
 </div>
-<div class="container  w3-opacity-min" style="background-color: rgba(20,20,20,0.7);padding:0px;padding-bottom: 15px;padding-top:15px">
-<center><h2 style="color:white"> เมนู </h2></center>
+<div class="container " style="background-color: #F9BA48;padding:0px;padding-bottom: 15px;padding-top:15px">
+<center><h2 style="color:white"> เครื่องมือสำหรับการเรียนรู้ </h2></center>
 </div>
 <div class="container" style="background-color: rgba(255,255,255,1)">
     <center>
         <center>
             <a href="#_main">
             <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
-                <img src="../images/plearn/menu_1.jpg" width="240" style="border-radius: 10px">
-                <div><button class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> New world !<span class="sub"><br> สร้างโลกใหม่ </span></button></div>
+                <center style="height:240px;width:240px;border-style:solid;border-color:#F9BA48;border-radius:5px">
+                    <img src="../images/02learn1.png" style="float:center; width:105;margin-top:60px">
+                    <img src="../images/02learn.png" style="float:center;width:105;margin-top:60px"></center>
+                <div><h5>PLEARN ZONE</h5><span class="sub" style="font-size:100%;font-weight:normal;line-height:10px"> การเรียนรู้ </span></div>
             </div>
             </a>
             <a href="plearn_tools.html">
             <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
-                <img src="../images/plearn/menu_2.jpg" width="240"  style="border-radius: 10px">
-                <div><button  class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> Market ! <span class="sub"><br> ตลาด </span></button></div>
+                <center style="height:240px;width:240px">
+                    <img src="../images/model.png" width="160"  style="margin-top:30px"></center>
+                <div><h5>NEURAL TOOLS</h5><span class="sub" style="font-size:100%;font-weight:normal;line-height:10px"> เครื่องมือช่วยการลงทุน </span></div>
             </div>
             </a>
             <a href="plearn_sim.html">
             <div class="col-md-4 div-button" style="cursor: pointer;padding: 20px">
-                <img src="../images/plearn/menu_3.jpg" width="240"  style="border-radius: 10px">
-                <div><button  class="btn btn-circle btn-default btn-next" style="margin-top:-10px;font-size: 15px"> Your world !<span class="sub"><br> โลกทั้งหมดของคุณ </span></button></div>
+                <center style="height:240px;width:240px">
+                    <img src="../images/lace.png" width="160" style="margin-top:30px"></center>
+                <div><h5>NEURAL SIMULATION</h5><span class="sub" style="font-size:100%;font-weight:normal;line-height:10px">จำลองการลงทุน</span></div>
             </div>
             </a>
         </center>
@@ -460,7 +525,14 @@
         </div>
         
     </div>
+    
 </div>
+
+    <div class="footer-black">
+    <h6>P.PLEARN.io@gmail.com</h6>
+    Copyright © 2017 NEURAL
+    </div>
+
 </body>
 
 
